@@ -2,10 +2,8 @@ Cookiecutter AWS New Resources
 ==============================
 
 Powered by Cookiecutter_
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
 
 Creates Terraform_ files for creating AWS Resources
-.. _Terraform: https://www.terraform.io
 
 Features
 ---------
@@ -44,6 +42,14 @@ Answer the prompts with your own desired information. For example::
     tag_owner [dev1]: roger
     tag_product [product1]: internal
 
+Edit mainly the two following files to fit your needs:
+
+    # Contains commands which will be executed during the instance initializing process
+    ./DevOps/ec2_userdata.sh
+
+    # Add more policies such as S3 or ASG
+    ./DevOps/policy_MyBlog_permissions.json
+
 For creating the resources::
 
     $ cd DevOps
@@ -63,3 +69,7 @@ TODO
 
 Any help is welcome!
 Get in touch using the https://github.com/spacetimelabs/new_resources/issues
+
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Terraform: https://www.terraform.io
