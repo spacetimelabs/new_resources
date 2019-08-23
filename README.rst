@@ -44,17 +44,19 @@ Answer the prompts with your own desired information. For example::
 
 Edit mainly the two following files to fit your needs:
 
-    # Contains commands which will be executed during the instance initializing process
-    ./DevOps/ec2_userdata.sh
-
-    # Add more policies such as S3 or ASG
-    ./DevOps/policy_MyBlog_permissions.json
+- `./DevOps/ec2_userdata.sh`: Contains commands which will be executed during the instance initializing process
+- `./DevOps/policy_MyBlog_permissions.json`: Add more policies such as S3 or ASG for the instance
 
 For creating the resources::
 
     $ cd DevOps
     $ terraform init
     $ terraform apply
+
+To destroy all resources created::
+
+    $ terraform destroy
+
 
 **Warning**: You'll need Terraform installed and in the path before use this template. 
 Check https://www.terraform.io/downloads.html out
