@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "{{ cookiecutter.project_name }}_profile" {
   name = "{{ cookiecutter.project_name }}_profile"
-  roles = ["${aws_iam_role.ec2_{{ cookiecutter.project_name }}_access_role.name}"]
+  role = "${aws_iam_role.ec2_{{ cookiecutter.project_name }}_access_role.name}"
 }
 
 resource "aws_iam_role" "ec2_{{ cookiecutter.project_name }}_access_role" {
