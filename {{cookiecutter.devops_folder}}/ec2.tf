@@ -9,7 +9,10 @@ resource "aws_spot_instance_request" "{{ cookiecutter.instance_name }}" {
 {%- endif %}
   ami = "{{ cookiecutter.ami }}"
   instance_type = "{{ cookiecutter.instance_type }}"
-  {%- if cookiecutter.use_spot_instance != 'n' %}spot_price = "{{ cookiecutter.spot_price }}"{%- endif %}
+  {%- if cookiecutter.use_spot_instance != 'n' %}
+  spot_price = "{{ cookiecutter.spot_price }}"
+  spot_type = "{{ cookiecutter.spot_type }}"
+  {%- endif %}
   key_name = "{{ cookiecutter.key_name }}"
 
   iam_instance_profile = "${aws_iam_instance_profile.{{ cookiecutter.project_name }}_profile.name}"
